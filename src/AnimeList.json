@@ -1,0 +1,110 @@
+[
+    {
+        "id": 1,
+        "Animename": "Jujutsu Kaisen",
+        "Character": "GOJO SATORU",
+        "imgSrc": "https://images3.alphacoders.com/132/1324832.png",
+        "rating": 9.9,
+        "progress": "20%"
+
+    },
+    {
+        "id": 2,
+        "Animename": "One Piece",
+        "Character": "Monkey D. Luffy",
+        "imgSrc": "https://static1.cbrimages.com/wordpress/wp-content/uploads/2023/02/luffy-is-grinning-in-the-movie.jpg",
+        "rating": "10.0",
+        "progress": "50%"
+
+    },
+    {
+        "id": 3,
+        "Animename": "Heavenly Dillusion",
+        "Character": "Maru",
+        "imgSrc": "https://inasianspaces.files.wordpress.com/2023/04/heavenly-delusion-ep-1-lawless-generation-kiruko-and-maru.png?w=1200",
+        "rating": 9.7,
+        "progress": "72%"
+
+    },
+    {
+        "id": 4,
+        "Animename": "Hell's Paradise",
+        "Character": "Shinko",
+        "imgSrc": "https://m.media-amazon.com/images/S/pv-target-images/9902a4dd25b2552b79662c712c6967d2ba2c7bb99fdaff7546dd457ea0839271.jpg",
+        "rating": 9.5,
+        "progress": "70%"
+
+    },
+    {
+        "id": 5,
+        "Animename": "Attack On Titan",
+        "Character": "Eren Eager",
+        "imgSrc": "https://img.asmedia.epimg.net/resizer/WwYHduY-V1IexaGvdcaVQ4qnCsc=/1472x828/cloudfront-eu-central-1.images.arcpublishing.com/diarioas/WMUS4CCCKBIJZDGCUUQ7OZLZ4A.jpg",
+        "rating": 9.8,
+        "progress": "100%"
+
+    },
+    {
+        "id": 6,
+        "Animename": "One Punch Man",
+        "Character": "Hero Saitama",
+        "imgSrc": "https://i.kym-cdn.com/photos/images/newsfeed/001/620/770/3aa.jpg",
+        "rating": "9.0",
+        "progress": "85%"
+
+    },
+    {
+        "id": 7,
+        "Animename": "Demon Slayer",
+        "Character": "Kamado Tanjiro",
+        "imgSrc": "https://staticg.sportskeeda.com/editor/2022/01/b50e2-16417952205524.png",
+        "rating": 9.7,
+        "progress": "72%"
+
+    },
+    {
+        "id": 8,
+        "Animename": "Blue Lock",
+        "Character": "Isagi",
+        "imgSrc": "https://i.ytimg.com/vi/UOGG1P32z5k/maxresdefault.jpg",
+        "rating": 9.7,
+        "progress": "65%"
+
+    },
+    {
+        "id": 9,
+        "Animename": "Bleach",
+        "Character": "Kurosaki Ichigo",
+        "imgSrc": "https://wallpapers.com/images/hd/bleach-pictures-4t2ieybhrb5agrn6.jpg",
+        "rating": 9.4,
+        "progress": "83%"
+
+    },
+    {
+        "id": 10,
+        "Animename": "Naruto",
+        "Character": "Naruto Uzumaki",
+        "imgSrc": "https://dw9to29mmj727.cloudfront.net/products/1974740935.jpg",
+        "rating": 9.8,
+        "progress": "84%"
+
+    },
+    {
+        "id": 11,
+        "Animename": "Dragon Ball Super",
+        "Character": "Son Goku",
+        "imgSrc": "https://w0.peakpx.com/wallpaper/479/289/HD-wallpaper-dragon-ball-super-anime-goku-movie-vegeta.jpg",
+        "rating": 9.8,
+        "progress": "81%"
+
+    },
+    {
+        "id": 12,
+        "Animename": "Tokyo Revengers",
+        "Character": "Hanagaki Takimichi",
+        "imgSrc": "https://wallpapercave.com/wp/wp10556553.jpg",
+        "rating": 8.2,
+        "progress": "92%"
+
+    }
+]

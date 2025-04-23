@@ -1,0 +1,85 @@
+i {
+    margin-right: 3px;
+}
+.progress {
+    width: 30%;
+    margin-top: 10px;
+}
+.searchBar {
+    align-items: center;
+}
+img {
+    border-radius: 5px;
+    width: 300px !important;
+    height: 200px !important;
+}
+
+/* Main image style fix */
+.anime-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Responsive CSS */
+@media only screen and (max-width: 768px) {
+    .searchBar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .searchBar .col-3,
+    .searchBar .col {
+        width: 100% !important;
+        margin-bottom: 10px;
+    }
+
+    .row.mt-3 {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .row.mt-3 .col-sm-4,
+    .row.mt-3 .col-sm-6 {
+        width: 100% !important;
+        margin-bottom: 10px;
+    }
+
+    .anime-img {
+        height: 180px; /* Responsive height */
+    }
+
+    .progress {
+        width: 50%;
+        margin: auto;
+    }
+
+    .modal-dialog {
+        max-width: 95%;
+    }
+
+    .rating {
+        display: block;
+        margin: auto;
+    }
+
+    .d-flex.justify-content-center.ps-5.searchBar {
+        padding-left: 0 !important;
+    }
+
+    .row.d-flex.justify-content-center > div {
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .btn.mybuttom {
+        width: 100%;
+    }
+}
+
+.mybuttom {
+    background-color: #905DF0 !important;
+    color: #fff !important;
+}

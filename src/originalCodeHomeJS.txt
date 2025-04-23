@@ -1,0 +1,289 @@
+"here is the original code, keep in mind don't alter any styles just make it responsive for mobile devices don't delete any code, don't change colors, JUST MAKE MY CODE RESPONSIVE."import './Home.css'
+import '@fortawesome/fontawesome-free/css/all.css'
+import { useEffect, useState } from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+function Animecomponent() {
+    let AnimeObjects = [
+        {
+            id: 1,
+            Animename: "Jujutsu Kaisen",
+            Character: 'GOJO SATORU',
+            imgSrc: require('./assets/gojo.png'),
+            rating: 9.9,
+            progress: '20%',
+
+        },
+        {
+            id: 2,
+            Animename: "One Piece",
+            Character: 'Monkey D. Luffy',
+            imgSrc: 'https://static1.cbrimages.com/wordpress/wp-content/uploads/2023/02/luffy-is-grinning-in-the-movie.jpg',
+            rating: '10.0',
+            progress: '50%',
+
+        },
+        {
+            id: 3,
+            Animename: "Heavenly Dillusion",
+            Character: 'Maru',
+            imgSrc: 'https://inasianspaces.files.wordpress.com/2023/04/heavenly-delusion-ep-1-lawless-generation-kiruko-and-maru.png?w=1200',
+            rating: 9.7,
+            progress: '72%',
+
+        },
+        {
+            id: 4,
+            Animename: "Hell's Paradise",
+            Character: 'Shinko',
+            imgSrc: 'https://m.media-amazon.com/images/S/pv-target-images/9902a4dd25b2552b79662c712c6967d2ba2c7bb99fdaff7546dd457ea0839271.jpg',
+            rating: 9.5,
+            progress: '70%',
+
+        },
+        {
+            id: 5,
+            Animename: "Attack On Titan",
+            Character: 'Eren Eager',
+            imgSrc: 'https://img.asmedia.epimg.net/resizer/WwYHduY-V1IexaGvdcaVQ4qnCsc=/1472x828/cloudfront-eu-central-1.images.arcpublishing.com/diarioas/WMUS4CCCKBIJZDGCUUQ7OZLZ4A.jpg',
+            rating: 9.8,
+            progress: '100%',
+
+        },
+        {
+            id: 6,
+            Animename: "One Punch Man",
+            Character: 'Hero Saitama',
+            imgSrc: 'https://i.kym-cdn.com/photos/images/newsfeed/001/620/770/3aa.jpg',
+            rating: '9.0',
+            progress: '85%',
+
+        },
+        {
+            id: 7,
+            Animename: "Demon Slayer",
+            Character: 'Kamado Tanjiro',
+            imgSrc: 'https://staticg.sportskeeda.com/editor/2022/01/b50e2-16417952205524.png',
+            rating: 9.7,
+            progress: "72%",
+
+        },
+        {
+            id: 8,
+            Animename: "Blue Lock",
+            Character: 'Isagi',
+            imgSrc: 'https://i.ytimg.com/vi/UOGG1P32z5k/maxresdefault.jpg',
+            rating: 9.7,
+            progress: '65%',
+
+        },
+        {
+            id: 9,
+            Animename: "Bleach",
+            Character: 'Kurosaki Ichigo',
+            imgSrc: 'https://wallpapers.com/images/hd/bleach-pictures-4t2ieybhrb5agrn6.jpg',
+            rating: 9.4,
+            progress: '83%',
+
+        },
+        {
+            id: 10,
+            Animename: "Naruto",
+            Character: 'Naruto Uzumaki',
+            imgSrc: 'https://dw9to29mmj727.cloudfront.net/products/1974740935.jpg',
+            rating: 9.8,
+            progress: '84%',
+
+        },
+        {
+            id: 11,
+            Animename: "Dragon Ball Super",
+            Character: 'Son Goku',
+            imgSrc: 'https://w0.peakpx.com/wallpaper/479/289/HD-wallpaper-dragon-ball-super-anime-goku-movie-vegeta.jpg',
+            rating: 9.8,
+            progress: '81%',
+
+        },
+        {
+            id: 12,
+            Animename: "Tokyo Revengers",
+            Character: 'Hanagaki Takimichi',
+            imgSrc: 'https://wallpapercave.com/wp/wp10556553.jpg',
+            rating: 8.2,
+            progress: '92%',
+
+        },
+
+    ];
+    // save data in local storage
+    // localStorage.setItem('AnimeData', JSON.stringify(AnimeObjects));
+    // get data from local storaage
+    let AnimeObject = JSON.parse(localStorage.getItem('AnimeData')) || [];
+    // console.log(AnimeObject[0]);
+
+    const [searchString, setString] = useState('')
+    const queryfuction = (value) =>setString()
+
+
+    const split = (e) => {
+        console.log(e.substr(0, 2));
+    }
+    const [filterProducts, setSearchobj] = useState([...AnimeObjects,...AnimeObject])
+    const [save, setSave] = useState([]);
+    
+    const searchYourObj = (value) => {
+        setSearchobj(AnimeObjects.filter(object => object.Animename.toLowerCase().startsWith(value.toLowerCase())))
+    }
+
+    const filterbyProgress = (value) => {
+        // console.log(value.split(',')[0]);
+        setSearchobj(AnimeObjects.filter(object => (object.progress.substring(0, 2) >= value.split(',')[0]) && (object.progress.substring(0, 2) <= value.split(',')[1])))
+
+    }
+
+    useEffect(() => {
+        if(save[0]) localStorage.setItem('AnimeData', JSON.stringify(save));
+
+    }, [save])
+
+    const savechanges = () => {
+
+        const storedImgUrl = document.getElementById('imglink').value
+        const newAnimeObj = {
+            id: filterProducts.length + 1,
+            Animename: document.getElementsByClassName('AnimeName')[0].value,
+            Character: document.getElementsByClassName('AnimeChar')[0].value,
+            imgSrc: storedImgUrl,
+            rating: document.getElementsByClassName('AnimeRating')[0].value,
+            progress: document.getElementsByClassName('AnimeProgress')[0].value,
+        };
+
+        setSave((prev) => [...prev,newAnimeObj]);
+
+        setSearchobj((prev) => [...prev, newAnimeObj]);
+
+
+        console.log(filterProducts)
+
+        console.log(newAnimeObj, "===> hello")
+
+        // return (
+        //     <div key={filterProducts.id}>
+        //         {filterProducts.map((animeobj, id) => (
+        //             <div key={id} className="row mt-3">
+        //                 <div className="col-sm-4 image">
+
+        //                     <img src={animeobj.imgSrc} width={300} height={220} alt='Anime Image' />
+
+
+        //                 </div>
+        //                 <div className="col-sm-6" key={animeobj.id}>
+        //                     <h1 className='AnimeName'>{animeobj.Animename}</h1>
+        //                     <h4 className='AnimeChar'>{animeobj.Character}</h4>
+        //                     <label className='btn btn-success'><i className="fa-regular fa-star"></i>{animeobj.rating}</label>
+        //                     <p>Progress</p>
+        //                     <div className="progress" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="20" aria-valuemax="100">
+        //                         <div className="progress-bar" style={{ width: animeobj.progress }}>{animeobj.progress}</div>
+        //                     </div>
+
+        //                 </div>
+
+        //             </div>
+        //         ))}
+        //     </div>
+        // )
+
+
+    }
+
+    return (
+
+
+        < div className='container' >
+
+            <div key={AnimeObjects.id} className='row mb-3'>
+                <div className='row mx-5 d-flex justify-content-center ps-5 searchBar' key={AnimeObjects.id}>
+                    <div className='col-3 col-sm-12'>
+                        <input type="text" onChange={(event) => searchYourObj(event.target.value)} className="form-control mt-4" id="searchQuery" placeholder="Search your anime requirement..." width='100' ></input>
+                    </div>
+                    <div className='col-3' key={AnimeObjects.id}>
+                        {/* <!-- Button trigger modal --> */}
+                        <button type="button" className="btn mt-4 mybuttom" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            + Add New Item
+                        </button>
+
+                        {/* <!-- Modal --> */}
+                        <form>
+                        <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div className="modal-dialog">
+                                <div className="modal-content">
+                                    <div className="modal-header">
+                                        <h5 className="modal-title" id="exampleModalLabel">Enter Details</h5>
+                                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div key={AnimeObjects.id} className="modal-body">
+                                        <label>Enter Anime name</label>
+                                        <input className="form-control mt-2 mb-2 AnimeName" />
+                                        <label>Enter Anime Character</label>
+                                        <input className="form-control mt-2 mb-2 AnimeChar" />
+                                        <label>Enter rating</label>
+                                        <input className="form-control mt-2 mb-2 AnimeRating" />
+                                        <label>Enter Progress of anime</label>
+                                        <input className="form-control mt-2 mb-2 AnimeProgress" />
+                                        <label>Enter Image address of anime</label>
+                                        <input id='imglink' className="form-control mt-2 mb-2" />
+
+                                    </div>
+                                    <div className="modal-footer" key={AnimeObjects.id}>
+                                        <input type='reset' value="Reset" className='btn btn-outline-danger'/>
+                                        <button type="button" className="btn btn-outline-secondary" data-bs-dismiss="modal" key={AnimeObjects.id}>Close</button>
+                                        <button type="button" className="btn btn-primary" data-bs-dismiss="modal"  onClick={savechanges} key={AnimeObjects.id}>Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div className='row d-flex justify-content-center'>
+                <div className='col-2'><button value={['20', '50']} onClick={(e) => filterbyProgress(e.target.value)} className='btn btn-success'>20% - 50%</button></div>
+                <div className='col-2'><button value={['50', '60']} onClick={(e) => filterbyProgress(e.target.value)} className='btn btn-success'>50% - 60%</button></div>
+                <div className='col-2'><button value={['70', '80']} onClick={(e) => filterbyProgress(e.target.value)} className='btn btn-success'>70% - 80%</button></div>
+                <div className='col-2'><button value={['90', '100']} onClick={(ev) => filterbyProgress(ev.target.value)} className='btn btn-success'>90% - 100%</button></div>
+            </div>
+
+            {filterProducts.map(animeobj => (
+                <div className="row mt-3" key={animeobj.id}>
+                    <div className="col-sm-4 image">
+
+                        <img src={animeobj.imgSrc} width={300} height={220} alt='Anime' />
+
+
+                    </div>
+                    <div className="col-sm-6">
+
+                        <h1>{animeobj.Animename}</h1>
+                        <h4>{animeobj.Character}</h4>
+                        <div className='d-flex row-sm-12'>
+                            <div className='col-10 '>
+                                <label className='btn btn-success rating'><i className="fa-regular fa-star"></i>{animeobj.rating}</label>
+                            </div>
+                            {/* <div className='col'>
+                                <i className="fa-solid fa-pen pen"></i>
+                            </div> */}
+                        </div>
+                        <p>Progress</p>
+                        <div className="progress" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="20" aria-valuemax="100">
+                            <div className="progress-bar" style={{ width: animeobj.progress }}>{animeobj.progress}</div>
+                        </div>
+                    </div>
+                </div>
+            ))}
+        </div>
+    )
+}
+
+export default Animecomponent;

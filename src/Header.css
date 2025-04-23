@@ -1,0 +1,86 @@
+li{
+    list-style-type: none;
+}
+
+nav{
+    background-image: url('./assets/Image4.jpg');
+    background-size: cover;
+    background-position: center center;
+    backdrop-filter: blur(50px);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+button{
+
+    padding: 10px 20px;
+    background-color: green;
+}
+
+
+/* CSS */
+.Home,a {
+  all: unset;
+  width: 50px;
+  height: 20px;
+  font-size: 16px;
+  background: transparent;
+  border: none;
+  position: relative;
+  color: #eabbbb;
+  cursor: pointer;
+  z-index: 1;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.Home::after,
+.Home::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -99999;
+  transition: all .4s;
+}
+
+.Home::before {
+  transform: translate(0%, 0%);
+  width: 100%;
+  height: 100%;
+  background: #28282d;
+  border-radius: 10px;
+}
+
+.Home::after {
+  transform: translate(10px, 10px);
+  width: 25px;
+  height: 25px;
+  background: #ffffff15;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 50px;
+}
+
+.Home:hover::before {
+  transform: translate(5%, 20%);
+  width: 110%;
+  height: 110%;
+}
+
+.Home:hover::after {
+  border-radius: 10px;
+  transform: translate(0, 0);
+  width: 100%;
+  height: 100%;
+}
+
+.Home:active::after {
+  transition: 0s;
+  transform: translate(0, 5%);
+}
